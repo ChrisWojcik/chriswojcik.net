@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <title>The Portfolio of Chris Wojcik - Developer & Designer</title>
+    <meta name="description" content="This is the online portfolio site of Chris Wojcik: Web Developer & Designer">
+    <meta name="keywords" content="Chris Wojcik, web designer, web developer, portfolio, font-end developer, new york, new jersey">
+    <meta name="author" content="Chris Wojcik, hello@chriswojcik.net">
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+        
+    <script type="text/javascript" src="//use.typekit.net/ciz1qzm.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body>
+    <div class="content">
+        <h1 id="logo">
+            <a href="http://chriswojcik.net">
+                <img src="img/logo.png" alt="Chris Wojcik: Developer &plus; Designer" width="459" height="164">
+            </a>
+        </h1>
+        <hr>
+        <h2>Website Coming Soon</h2>        
+        <p class="nav-social">
+            <a href="https://twitter.com/_ChrisWojcik">
+                <span aria-hidden="true" data-icon="!"></span>
+                <span class="visuallyhidden">Twitter</span>
+            </a>
+            <a href="https://github.com/ChrisWojcik">
+                <span aria-hidden="true" data-icon=";"></span>
+                <span class="visuallyhidden">GitHub</span>
+            </a>
+            <a href="mailto:hello@chriswojcik.net">
+                <span aria-hidden="true" data-icon="*"></span>
+                <span class="visuallyhidden">hello@chriswojcik.net</span>
+            </a>
+        </p>
+    </div>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.3.min.js"><\/script>')</script>
+    <script>
+        // Replace the logo on retina displays
+        $(window).on("load", function() {
+            var pixelRatio = !!window.devicePixelRatio ? window.devicePixelRatio : 1,
+            logoimg    = $('#logo').find('img');
+            
+            if (pixelRatio > 1) {        
+                logoimg.attr('src', logoimg.attr('src').replace(".", "@2x."));
+            }
+        });
+    </script>
+    <script>
+        var _gaq=[['_setAccount','UA-27635613-2'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+</body>
+
+</html>

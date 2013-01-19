@@ -1,0 +1,621 @@
+/*! =========================================================================
+   
+    * Filename:     style.css
+    * Author:       Chris Wojcik
+    * Website:      www.chriswojcik.net
+
+   ========================================================================== */
+
+@import "compass/css3";
+@import "project-vars";
+
+/* ==========================================================================
+   Custom Fonts
+   ========================================================================== */
+
+@import "custom-fonts";
+
+.wf-loading {
+    body {
+        visibility: hidden;
+    }    
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* 
+* FTW: paulirish.com/2012/box-sizing-border-box-ftw/ 
+*/
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+@import "typography";
+
+/* ==========================================================================
+   Page Structure
+   ========================================================================== */
+
+.section-wrap {
+    width: 80%;
+    max-width: 75em;
+    margin: 0 auto;
+    padding: 2.75em 0 5em;
+}
+
+.no-mq .section-wrap {
+    width: 60em;
+}
+
+section {    
+    h2 {
+        z-index: 1;
+        text-align: center;
+        position: relative;        
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 38%;
+            margin-top: -6px;
+            height: 13px;        
+            z-index: -1;
+            box-sizing: content-box;
+        }        
+        &:before {
+            left: 0;
+        }        
+        &:after {
+            right: 0;
+        }
+    }
+}
+
+/* ==========================================================================
+   Header / Nav
+   ========================================================================== */
+
+.main-nav {
+    @include font-stack-headers;
+    text-transform: uppercase;
+    line-height: 1em;
+    font-weight: 700;
+    text-align: center;
+    padding: 1.5em 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    ul {
+        padding: 0;
+        margin: 0 auto;
+        overflow: hidden;
+        font-size: 1.625em;
+        line-height: 1em;
+        width: 24em;
+   }
+   li {
+        float: left;
+        display: block;
+        width: 25%;
+   }
+   a {
+       position: relative;
+       padding: 0 0.875em;
+       color: $beige;
+       &:hover, &:focus, &.current {
+           color: #fff;
+       }
+   }
+   .current {
+        &:before, &:after {
+            content: "";
+            width: 12px;
+            height: 13px;                
+            position: absolute;
+            top: 50%;                
+            margin-top: -6px;
+            background-size: 25px 13px;
+        }
+        &:before {
+            background: url(../img/hover-arrows.png) no-repeat top left;
+            left: 0;
+        }
+        &:after {
+            background: url(../img/hover-arrows.png) no-repeat top right;
+            right: 0;
+        }
+    }
+}
+
+.page-header {
+    padding: 6.5em 0 4em;
+    background: url(../img/bg-brown.png);
+}
+
+#logo a {
+    display: block;
+    width: 459px;
+    height: 164px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Portfolio
+   ========================================================================== */
+
+.portfolio {
+    color: darken($beige, 30%);
+    background: url(../img/bg-gray.png);
+    h2 {
+        color: $orange;
+        &:before {
+            background: url(../img/portfolio-header-border.png) no-repeat top left;
+        }
+        &:after {
+            background: url(../img/portfolio-header-border.png) no-repeat top right;
+        }
+    }
+    h3 {
+        color: darken($beige, 50%);
+    }
+    h4 {
+        margin-top: -0.75em;
+        color: darken($beige, 15%);
+    }    
+    img {
+        width: 100%;
+        height: auto !important;
+        background: darken($gray, 4%);
+        background: rgba(darken($gray, 8%), 0.5);
+    }
+}
+
+#featured-project {
+    float: left;
+    margin-top: -3em;
+}
+
+.project {
+    float: left;
+    border-bottom: 2px dashed lighten($beige, 10%);
+    padding: 3em 0;
+    figure {
+        float: left;
+        width: 45%;
+        position: relative;
+        overflow: hidden;
+        img {
+            padding: 0.75em;
+        }
+    }
+    article {
+        float: left;
+        width: 55%;
+        padding-left: 3em;
+    }    
+}
+
+#other-projects {
+    float: left;
+    width: 100%;
+    padding-top: 2em;
+    display: none;
+    h3 {
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .thumbnail-gallery {
+        border: none;
+        padding-top: 0;
+    }
+    li {
+        padding: 0.75em;
+    }
+    img {        
+        padding: 0.5em;
+    }
+}
+
+.thumbnail-gallery {
+    list-style: none;
+    margin: 0;
+    margin-top: 1.125em;
+    padding: 1.125em 0 0 0;
+    border-top: 2px dashed lighten($beige, 10%);
+    li {
+        width: 33.333%;
+        padding: 0.375em;
+        float: left;
+    }
+    img {
+        padding: 0.375em;
+        @include transition(background 0.2s ease);
+        &:hover {
+            background: darken($gray, 12%);
+            background: rgba(darken($gray, 15%), 0.75);
+        }
+    }
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+
+.about {
+    background: url(../img/bg-red.png);
+    color: darken($orange, 40%);
+    a {
+        color: #000;
+        &:hover, &:focus {
+            color: #fff;
+        }
+    }
+    h2 {
+        color: $offWhite;
+        &:before {
+            background: url(../img/about-header-border.png) no-repeat top left;
+        }
+        &:after {
+            background: url(../img/about-header-border.png) no-repeat top right;
+        }
+    }
+    h3 {
+        color: darken($orange, 45%);
+    }
+    .download-link {
+        @include font-stack-headers;
+        font-size: 1.25em;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+        margin-top: 0.5em;
+        span {
+            margin-right: 0.25em;
+        }
+    }
+}
+
+.bio {
+    float: left;
+    width: 60%;
+    padding-right: 3em;   
+}
+
+.skills-tools {
+    float: left;
+    width: 38%;
+    ul {        
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        background: $offWhite;
+        margin-top: 6px; 
+        position: relative;
+        font-size: 14px;
+        span {
+            background: #000;
+            display: block;
+            color: #fff;
+            font-style: italic;
+            padding: 3px 14px;
+            height: 32px;
+            @include transition(background 0.2s ease);
+        }
+        &:after {
+            content: "";
+            width: 0; 
+            height: 0;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;	
+            border-left: 16px solid $offWhite;
+            position: absolute;
+            top: 0;
+            right: -16px;
+        }
+        &:hover span {
+            background: darken($orange, 45%);
+        }
+    }
+    .css3 {
+        span {
+            width: 100%;
+        }
+        &:after {
+            border-left: 16px solid #000;
+            @include transition(border 0.2s ease); 
+        }
+        &:hover:after {
+            border-left: 16px solid darken($orange, 45%);
+        }
+    }
+    .html5 {
+        span {
+            width: 95%;
+        }
+    }
+    .javascript{
+        span {
+            width: 70%;
+        }
+    }
+    .php{
+        span {
+            width: 65%;
+        }
+    }
+    .sass{
+        span {
+            width: 95%;
+        }
+    }
+    .photoshop{
+        span {
+            width: 90%;
+        }
+    }
+    .illustrator{
+        span {
+            width: 75%;
+        }
+    }
+}
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+.contact {
+    background: url(../img/bg-brown.png);
+    color: $beige;
+    h2 {
+        color: $orange;
+        &:before, &:after {
+            width: 38%;
+        }
+        &:before {
+            background: url(../img/contact-header-border.png) no-repeat top left;
+        }
+        &:after {
+            background: url(../img/contact-header-border.png) no-repeat top right;
+        }
+    }
+    h3 {
+        color: $offWhite;
+    }
+    .nav-social {
+        margin-top: 1em;
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: lighten($brown, 15%);
+            padding: 0 0.083333333333em;
+            font-size: 1.5em;
+            &:hover, &:focus {
+                color: $orange;
+            }
+        }
+    }
+    .button {
+        border: none;
+        vertical-align: middle;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.25em;
+        padding: 0.4em 1.2em;
+        @include font-stack-headers;
+        @include border-radius(3px);
+        @include transition(color 0.2s ease, background 0.2s ease);
+        margin-top: 0.3em;
+        color: #fff;
+        background: $orange;
+        &:hover, &:focus {
+            background: $beige;
+            color: $darkBrown;
+        }
+    }
+}
+
+.contact-info {
+    float: left;
+    width: 45%;
+    padding-right: 3em;
+}
+
+#contact-form {
+    float: left;
+    width: 55%;
+    ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        float: left;
+    }
+    label {
+        @include font-stack-headers;
+        text-transform: uppercase;
+        margin-bottom: 0.3125em;
+    }
+    span.error {
+        color: $red;
+        font-style: italic;
+        margin-left: 0.5em;
+        font-size: 0.875em;
+        float: right;
+        text-align: right;
+    }
+    input.error, textarea.error {
+        border: 1px solid $red;
+        @include box-shadow(0px 0px 2px 0px $red);
+    }
+    .star {
+        color: $orange;
+    }
+    .instruction {
+        font-style: italic;
+        font-size: 0.875em;
+    }
+}
+
+#submit-message {
+    font-style: italic;
+    font-size: 0.9375em;
+    background: darken($brown, 12%);
+    background: rgba(darken($brown, 15%), 0.5);
+    float: left;
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 1.2em;
+}
+
+.success {
+    color: $green;
+}
+
+.failure {
+    color: $red;
+}
+
+#loading {
+    width:32px;  
+    height:32px;
+    display: none;
+    float: left;
+    margin-top: 0.625em;
+    margin-left: 1.25em;
+    background: url(../img/ajax-loader.gif);
+}
+
+#name-container {
+    width: 50%;
+    padding-right: 0.5em;
+}
+
+#email-container {
+    width: 50%;
+    padding-left: 0.5em;
+}
+
+#message-container, #submit-container {
+    width: 100%;
+    clear: both;
+}
+
+#message-container {
+    margin-top: 1.25em;
+}
+
+#submit-container {
+    margin-top: 0.5em;
+}
+
+#name, #email, #message {
+    width: 100%;
+    padding: 0.5em;
+    color: $beige;
+    border: none;
+    background-color: lighten($brown, 15%);
+    @include single-transition(background-color, 0.5s, ease);
+    clear: both;
+    &:focus {
+        background: lighten($beige, 15%);
+        color: darken($beige, 40%);
+    }
+}
+
+#send {
+    float: left;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.page-footer {
+    background: url(../img/bg-black.png);
+    padding: 3.5em 0;
+    @include font-stack-headers;
+    @include box-shadow(inset 0px 30px 30px -30px darken($darkBrown, 40%));
+    color: darken($beige, 10%);
+    p {
+        text-align: center;
+        line-height: 1.375em;
+        width: 50%;
+        margin: 0.375em auto;
+        a {
+            color: $orange;
+            &:hover, &:focus {
+                color: darken($orange, 20%);
+            }
+        }
+    }    
+}
+
+#sticky-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    background: $brown;
+    background: rgba($brown, 0.98);
+    @include box-shadow(0px 0px 10px 1px $brown);
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@import "media-queries";
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+@import "utilities";

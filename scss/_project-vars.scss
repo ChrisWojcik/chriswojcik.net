@@ -1,0 +1,17 @@
+$beige: #b0a09d;
+$orange: #ea5834;
+$offWhite: #fff9f2;
+$gray: #dfdbda;
+$brown: #1b110f;
+$midOrange: #dc5331;
+$darkBrown: #080505;
+$red: #fa301e;
+$green: #6d9370;
+
+@mixin font-stack-body {
+    font-family: "proxima-nova", sans-serif;
+}
+
+@mixin font-stack-headers {
+    font-family: "refrigerator-deluxe", sans-serif;
+}

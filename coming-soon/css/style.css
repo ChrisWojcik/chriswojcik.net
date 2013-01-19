@@ -1,0 +1,134 @@
+/* =========================================================================
+   
+    * Filename:     style.css
+    * Author:       Chris Wojcik
+    * Website:      www.chriswojcik.net
+
+   ========================================================================== */
+
+/* ==========================================================================
+   Page Styles
+   ========================================================================== */
+
+@font-face {
+    font-family: 'icoMoon';
+    src:url('../_fonts/icoMoon.eot');
+    src:url('../_fonts/icoMoon.eot?#iefix') format('embedded-opentype'),
+        url('../_fonts/icoMoon.svg#icoMoon') format('svg'),
+        url('../_fonts/icoMoon.woff') format('woff'),
+        url('../_fonts/icoMoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {     
+    font-family: "refrigerator-deluxe", sans-serif;
+    font-size: 100%; /* Base font-size of 16px */
+    line-height: 1.625em; /* 26/16 */
+    background: url(../img/bg-brown.png);
+    color: #b0a09d;
+}
+
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 2px dashed #2b2423;
+    margin: 3.5em auto 3.25em;
+    padding: 0;
+    width: 18em; /* 288/16 */
+}
+
+a {
+    text-decoration: none;
+}
+
+.content { 
+    padding: 6em 0; 
+    text-align: center;
+}
+
+h2 { 
+    margin: 0 0 0.375em; 
+    font-size: 3em; /* 48/16 */
+    line-height: 1em; /* 48/48 */    
+    font-weight: 400;
+    text-transform: uppercase; 
+    color: #fff; 
+}
+
+.nav-social {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-social a {
+    color: #4c302a;
+    padding: 0 0.066666666667em;
+    font-size: 1.875em;  /* 24/16 */
+}
+
+.nav-social a:hover, .nav-social a:focus {
+    color: #ea5834;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media all and (max-width: 33.75em) { /* 540/16 */    
+    body {
+        font-size: 85%;
+        padding: 2em 0;
+    }    
+    #logo {
+        width: 85%;
+        height: auto;
+        margin: 0 auto;
+    }    
+    #logo a img {
+        width: 100%;
+        height: auto !important;
+        -ms-interpolation-mode: bicubic;
+    }
+}
+
+@media all and (max-width: 25em) { /* 400/16 */    
+    body {
+        font-size: 65%;
+        padding: 3em 0;
+    }
+}
+
+@media all and (max-width: 20em) { /* 340/16 */    
+    body {
+        font-size: 55%;
+    }
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+/* Use with Icon fonts */
+[data-icon]:before {
+    font-family: 'icoMoon';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    top: 0.25em; 
+    font-size: 1.5em;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

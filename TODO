@@ -1,0 +1,70 @@
+
+#TODO
+* More testing on real ipad and iPhone
+* Cross-browser testing
+* YSLOW
+* Google Page Speed
+
+* write linkedin profile
+* clean-up facebook, privacy settings at highest level
+* business cards and resume to match website
+
+
+## media queries / mobile support
+* Set up media queries - DONE
+* No media query support in IE8 - DONE
+* More testing on real ipad and iPhone
+* box-sizing polyfill? - Doesn't seem to work well...fehhhh print style sheet for lt ie8
+* replace section h2 and span with header and h1...add "back to top" link for mobile display only - maybe later
+* change sticky-nav media query to max-device-width - Change this to use UA sniffing?
+* @2x images for portfolio??? - use retina.js??? - deal with after launch
+* Print style sheet for IE 6&7 - DONE
+* Re-think conditional sticky navigation? see Brad Frost's post about lightbox - deal with after launch
+
+## misc
+* fix pngs for IE6 - Fehhhhhh print style sheet for lt ie8
+* RGBA fallback - DONE
+* Cross-browser testing
+* SEO - http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/straightforward-seo-for-webdesigners/ - DONE
+* No-JS fallbacks - DONE, eh...it looks fine
+* Set up contact form to work - DONE
+* Ajax include thumbnails at large resolutions?? - Deal with after launch
+* Google Analytics - DONE
+* Email and log errors - Deal with after launch
+* js hint - DONE
+* Remove box-sizing test from modernizr, not supporting lt ie8 anyway - DONE
+* position fixed with modernizr? - load conditionally? - NOPE, but UA-sniffing looks like it wouldn't be terrible?
+* Refactor css - DONE
+* Add author information to css - DONE
+* Recompile sass for production - DONE
+* humans.txt - DONE
+* favicons - DONE
+* ASCII art - DONE
+* jquery image preloader - DONE
+
+## professional
+* write site content - DONE
+* write linkedin profile
+* clean-up facebook, privacy settings at highest level
+* business cards and resume to match website
+
+## page speed
+* http://www.youtube.com/watch?v=IQKVtAMyiG0&list=WLAD72EAE1D2ED608E
+* .htaccess gzipping - DONE
+* .htaccess cache - DONE
+* lossless compression of images - DONE
+* sprite images (compass?) - NOT NEEDED
+* cache busting - deal with after launch
+* YSLOW
+* Google Page Speed
+
+## future learning (web app)
+* learn requirejs
+* client side MVC
+* backbone.js
+* todo mvc
+
+deployhq with private github account!!
+
+## future learning (wordpress)
+* Create Bartlet for America as a wordpress theme
