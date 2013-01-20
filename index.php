@@ -61,7 +61,7 @@ if (isset($_SESSION['return_data'])) {
     <meta name="description" content="This is the online portfolio site of Chris Wojcik: Web Developer & Designer">
     <meta name="keywords" content="Chris Wojcik, web designer, web developer, portfolio, font end developer, new york, new jersey">
     <meta name="author" content="Chris Wojcik, hello@chriswojcik.net">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" href="css/normalize.css">
     <!--[if gte IE 8]><!-->
@@ -72,7 +72,7 @@ if (isset($_SESSION['return_data'])) {
     <![endif]-->
     
     <!--[if gte IE 8]><!-->
-    <script src="js/libs/modernizr.2.6.2.custom.min.js"></script>
+    <script src="js/vendor/modernizr.2.6.2.custom.min.js"></script>
     <script type="text/javascript">
         (function() {
             var config = {
@@ -84,7 +84,7 @@ if (isset($_SESSION['return_data'])) {
     </script>
     <!--<![endif]-->
     <!--[if lt IE 8]>
-    <script src="js/libs/html5shiv.js"></script>
+    <script src="js/vendor/html5shiv.js"></script>
     <![endif]-->
 </head>
 
@@ -152,7 +152,7 @@ if (isset($_SESSION['return_data'])) {
                         <h3>[1st RB], Online Gaming Group</h3>
                         <h4>Web Design, HTML, CSS, PHP</h4>
                         <p>
-                            The [1st RB] is an online gaming group based in a WWII-era game. The goal of the site was to give the group a more personalized visual presence in order to recruit new members and create a more appealing information center for its current roster.  The group had an existing online forum which I integrated with the site to allow the group to manage the site's content by editing the kind of message board posts they were already familiar with.
+                            The [1st RB] is an online gaming community based in the WWII-era game, Day of Defeat:Source. The goal of the site was to give the group a more personalized visual presence in order to recruit new members and create a more appealing information center for its current roster.  The group had an existing online forum which I integrated with the site to allow the group to manage the site's content by editing the kind of message board posts they were already familiar with.
                         </p>
                         <p>
                             The back end was coded in PHP and I created a basic MVC-style framework to allow for easier templating and handle the database interaction.
@@ -336,7 +336,7 @@ if (isset($_SESSION['return_data'])) {
     <div id="test"></div>
     <!--[if gte IE 8]><!-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.3.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
     <!--<![endif]-->

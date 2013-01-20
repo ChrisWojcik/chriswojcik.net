@@ -28,15 +28,16 @@ WOJ.navigation = (function() {
     }
     
     // Scroll to the top of an element
-    var scrollToHref = function(elem) {
+    var scrollToHref = function(e) {
         $('html, body').stop(); // Stop any ongoing scrolling immediately
         $.scrollTo(
-            $(elem).attr("href"),
+            $(this).attr("href"),
             {
                 duration: 500,
                 offset: {'left': 0, 'top': scrollOffset * -1}
             }
         );
+        e.preventDefault();
     };
 
     // Handler for show/hiding the stickyNav as the user scrolls down/up
@@ -96,17 +97,10 @@ WOJ.navigation = (function() {
         }
 
         // Smooth animated scrolling for navigation bar
-        mainNav.on('click', 'a', function(e) {
-            scrollToHref(this);
-            e.preventDefault();
-        });
+        mainNav.on('click', 'a', scrollToHref);
 
         // Smooth scrolling for clicking on the logo
-        $('#logo').find('a').on('click', function(e) {
-            scrollToHref(this);
-            e.preventDefault();
-        });
-
+        $('#logo').find('a').on('click', scrollToHref);
     };
 
     return {
@@ -146,15 +140,14 @@ WOJ.portfolioGallery = (function() {
                 onAfter : function() {
                     featuredProject.find('.current').removeClass('current')
                         .fadeOut(fadeTime, function() {
-                            project.addClass('current').fadeIn(fadeTime);
+                            project.addClass('current').fadeIn(fadeTime);                            
+                            if (typeof(callback) === "function") {  
+                                callback();  
+                            }
                         });
                 }
             }
         );
-
-        if (typeof(callback) === "function") {  
-            callback();  
-        }
     };
 
     var switchFeaturedImg = function(currentImg, newSrc, parent, callback) {
@@ -167,12 +160,11 @@ WOJ.portfolioGallery = (function() {
         // Fade out the original image and then remove it from the DOM
         currentImg.fadeOut(500, function() {
             newImg.css(visibleImg);
-            $(this).remove();
-        });
-
-        if (typeof(callback) === "function") {  
-            callback();  
-        }
+            $(this).remove();            
+            if (typeof(callback) === "function") {  
+                callback();  
+            }
+        });        
     };        
 
     // Setup and event handlers

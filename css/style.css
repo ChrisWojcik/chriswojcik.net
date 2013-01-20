@@ -147,6 +147,10 @@ input[type="text"], input[type="email"], textarea {
    Page Structure
    ========================================================================== */
 
+body {
+  overflow-x: hidden;
+}
+
 .section-wrap {
   width: 80%;
   max-width: 75em;
