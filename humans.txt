@@ -1,0 +1,10 @@
+/* TEAM */
+	Web designer: Chris Wojcik
+	Twitter: @_ChrisWojcik
+	From: New Jersey
+
+/* SITE */
+	Last update: 2013/01/08
+	Language: English
+	Doctype: HTML5
+	IDE: Netbeans, FileZilla, Git, Beanstalk, Photoshop

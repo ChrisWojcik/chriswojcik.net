@@ -166,3 +166,4 @@ pip-log.txt
 TODO.md
 author-files/
 /.sass-cache/
+/intermediate/.sass-cache/

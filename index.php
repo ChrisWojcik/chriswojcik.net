@@ -57,11 +57,17 @@ if (isset($_SESSION['return_data'])) {
 
 -->
 
-    <title>The Portfolio of Chris Wojcik - Developer & Designer</title>
+    <title>The Portfolio of Chris Wojcik - Developer + Designer</title>
     <meta name="description" content="This is the online portfolio site of Chris Wojcik: Web Developer & Designer">
     <meta name="keywords" content="Chris Wojcik, web designer, web developer, portfolio, font end developer, new york, new jersey">
     <meta name="author" content="Chris Wojcik, hello@chriswojcik.net">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
 
     <link rel="stylesheet" href="css/normalize.css">
     <!--[if gte IE 8]><!-->
