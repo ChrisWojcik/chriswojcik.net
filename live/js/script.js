@@ -296,12 +296,12 @@ $(function() {
     }
     
     // Preload images
-    $.preloadImages('http://localhost/portfolio-beanstalk/img/bartlet-2.jpg',
-                    'http://localhost/portfolio-beanstalk/img/bartlet-3.jpg',
-                    'http://localhost/portfolio-beanstalk/img/ranger-2.jpg',
-                    'http://localhost/portfolio-beanstalk/img/rrca-2.jpg',
-                    'http://localhost/portfolio-beanstalk/img/rrca-3.jpg',
-                    'http://localhost/portfolio-beanstalk/img/ajax-loader.gif');
+    $.preloadImages('http://chriswojcik.net/img/bartlet-2.jpg',
+                    'http://chriswojcik.net/img/bartlet-3.jpg',
+                    'http://chriswojcik.net/img/ranger-2.jpg',
+                    'http://chriswojcik.net/img/rrca-2.jpg',
+                    'http://chriswojcik.net/img/rrca-3.jpg',
+                    'http://chriswojcik.net/img/ajax-loader.gif');
                     
     WOJ.navigation.init();
     WOJ.portfolioGallery.init();
