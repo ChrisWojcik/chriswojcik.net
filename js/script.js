@@ -27,6 +27,49 @@ WOJ.navigation = (function() {
             scrollOffset = 0;
     }
     
+    // Setup and event handlers
+    var init = function() {
+
+        // Hide the StickyNav by default
+        stickyNav.hide();
+
+        if (showStickyNav) {
+            mainNav.find('li:first-child a').addClass('current');
+            setWayPoints();                
+        }
+
+        // Smooth animated scrolling for navigation bar
+        mainNav.on('click', 'a', scrollToHref);
+
+        // Smooth scrolling for clicking on the logo
+        $('#logo').find('a').on('click', scrollToHref);
+    };
+    
+    // Using jQuery Waypoints
+    var setWayPoints = function() {
+
+        // Set throttle setting close to the fade animation duration to prevent
+        // the nav bar from cycling while scrolling
+        $.waypoints.settings.scrollThrottle = 450;
+
+        // Reveal the sticky nav if twice its height down the page
+        $('#home').waypoint({
+            handler: function(event, direction) {
+                fadeInOutStickyNav(direction);
+            },
+            offset: scrollOffset * -2
+        });
+
+        // Set a waypoint at each section to 
+        // cycle the current selection on the nav bar
+        $('section').waypoint({
+            handler: function(event, direction) {
+                changeCurrentLink($(this), direction);
+            },
+            offset: scrollOffset * 2
+        });
+    };
+    
     // Scroll to the top of an element
     var scrollToHref = function(e) {
         $('html, body').stop(); // Stop any ongoing scrolling immediately
@@ -60,49 +103,6 @@ WOJ.navigation = (function() {
         activeLink.addClass('current');
     };
     
-    // Using jQuery Waypoints
-    var setWayPoints = function() {
-
-        // Set throttle setting close to the fade animation duration to prevent
-        // the nav bar from cycling while scrolling
-        $.waypoints.settings.scrollThrottle = 450;
-
-        // Reveal the sticky nav if twice its height down the page
-        $('#home').waypoint({
-            handler: function(event, direction) {
-                fadeInOutStickyNav(direction);
-            },
-            offset: scrollOffset * -2
-        });
-
-        // Set a waypoint at each section to 
-        // cycle the current selection on the nav bar
-        $('section').waypoint({
-            handler: function(event, direction) {
-                changeCurrentLink($(this), direction);
-            },
-            offset: scrollOffset * 2
-        });
-    };
-
-    // Setup and event handlers
-    var init = function() {
-
-        // Hide the StickyNav by default
-        stickyNav.hide();
-
-        if (showStickyNav) {
-            mainNav.find('li:first-child a').addClass('current');
-            setWayPoints();                
-        }
-
-        // Smooth animated scrolling for navigation bar
-        mainNav.on('click', 'a', scrollToHref);
-
-        // Smooth scrolling for clicking on the logo
-        $('#logo').find('a').on('click', scrollToHref);
-    };
-
     return {
         scrollOffset: scrollOffset,
         init: init
@@ -128,45 +128,7 @@ WOJ.portfolioGallery = (function() {
     // CSS Properties - for the switching out the featured image
     var visibleImg = {position: 'relative', zIndex: 2};
     var hiddenImg  = {position: 'absolute', top: 0, left: 0, zIndex: 1};
-
-    // Scroll to the top of the projects area, fade out, and fade in a new one
-    var revealProject = function(project, fadeTime, callback) {
-
-        $.scrollTo(
-            featuredProject,
-            {
-                duration: 300,
-                offset: {'left': 0, 'top': scrollOffset * -1},
-                onAfter : function() {
-                    featuredProject.find('.current').removeClass('current')
-                        .fadeOut(fadeTime, function() {
-                            project.addClass('current').fadeIn(fadeTime);                            
-                            if (typeof(callback) === "function") {  
-                                callback();  
-                            }
-                        });
-                }
-            }
-        );
-    };
-
-    var switchFeaturedImg = function(currentImg, newSrc, parent, callback) {
-        currentImg.css(visibleImg);
-
-        // Absolutely position a new image behind the old one
-        var newImg = currentImg.clone()
-            .css(hiddenImg).attr('src', newSrc).appendTo(parent);
-
-        // Fade out the original image and then remove it from the DOM
-        currentImg.fadeOut(500, function() {
-            newImg.css(visibleImg);
-            $(this).remove();            
-            if (typeof(callback) === "function") {  
-                callback();  
-            }
-        });        
-    };        
-
+    
     // Setup and event handlers
     var init = function() {
 
@@ -214,6 +176,44 @@ WOJ.portfolioGallery = (function() {
         });
     };
 
+    // Scroll to the top of the projects area, fade out, and fade in a new one
+    var revealProject = function(project, fadeTime, callback) {
+
+        $.scrollTo(
+            featuredProject,
+            {
+                duration: 300,
+                offset: {'left': 0, 'top': scrollOffset * -1},
+                onAfter : function() {
+                    featuredProject.find('.current').removeClass('current')
+                        .fadeOut(fadeTime, function() {
+                            project.addClass('current').fadeIn(fadeTime);                            
+                            if (typeof(callback) === "function") {  
+                                callback();  
+                            }
+                        });
+                }
+            }
+        );
+    };
+
+    var switchFeaturedImg = function(currentImg, newSrc, parent, callback) {
+        currentImg.css(visibleImg);
+
+        // Absolutely position a new image behind the old one
+        var newImg = currentImg.clone()
+            .css(hiddenImg).attr('src', newSrc).appendTo(parent);
+
+        // Fade out the original image and then remove it from the DOM
+        currentImg.fadeOut(500, function() {
+            newImg.css(visibleImg);
+            $(this).remove();            
+            if (typeof(callback) === "function") {  
+                callback();  
+            }
+        });        
+    };        
+
     return {
         init: init
     };
@@ -227,18 +227,6 @@ WOJ.contactForm = (function() {
     var submitMessage     = $('#submit-message');
     var messageContainer  = submitMessage.find('span');
     var loading           = $('#loading');
-
-    var showSuccess = function(message) {
-        messageContainer.text(message);
-        messageContainer.attr('class', 'success');
-        submitMessage.removeClass('hidden');
-    };
-
-    var showFailure = function(message) {
-        messageContainer.text(message);
-        messageContainer.attr('class', 'failure');
-        submitMessage.removeClass('hidden');
-    };
     
     var init = function() {
 
@@ -280,6 +268,18 @@ WOJ.contactForm = (function() {
             }
         });
     };
+
+    var showSuccess = function(message) {
+        messageContainer.text(message);
+        messageContainer.attr('class', 'success');
+        submitMessage.removeClass('hidden');
+    };
+
+    var showFailure = function(message) {
+        messageContainer.text(message);
+        messageContainer.attr('class', 'failure');
+        submitMessage.removeClass('hidden');
+    };    
     
     return {
         init: init
