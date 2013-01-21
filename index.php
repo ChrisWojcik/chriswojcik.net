@@ -152,7 +152,7 @@ if (isset($_SESSION['return_data'])) {
                         <h3>[1st RB], Online Gaming Group</h3>
                         <h4>Web Design, HTML, CSS, PHP</h4>
                         <p>
-                            The [1st RB] is an online gaming community based in the WWII-era game, Day of Defeat:Source. The goal of the site was to give the group a more personalized visual presence in order to recruit new members and create a more appealing information center for its current roster.  The group had an existing online forum which I integrated with the site to allow the group to manage the site's content by editing the kind of message board posts they were already familiar with.
+                            The [1st RB] is an online gaming community based in the WWII-era game, Day of Defeat: Source. The goal of the site was to give the group a more personalized visual presence in order to recruit new members and create a more appealing information center for its current roster.  The group had an existing online forum which I integrated with the site to allow the group to manage the site's content by editing the kind of message board posts they were already familiar with.
                         </p>
                         <p>
                             The back end was coded in PHP and I created a basic MVC-style framework to allow for easier templating and handle the database interaction.
@@ -179,7 +179,7 @@ if (isset($_SESSION['return_data'])) {
                         <h3>Radio Repertory Company of America</h3>
                         <h4>Web Design</h4>
                         <p>
-                            The RRCA is an audio production company specializing in the creation of original radio dramas. I was contracted to redesign their website for use in an academic presentation of a proposed brand relaunch. The goal of the relaunch was to streamline and update the client's existing web presence and improve the site's integration with social media outlets. For the redesign, I retained the site's original color palette but was inspired by the retro sci-fi theme of many of the group's audio productions.
+                            The RRCA is an audio production company specializing in the creation of original radio dramas. I was asked to redesign their website for use in an academic presentation of a proposed brand relaunch. The goal of the relaunch was to streamline and update the client's existing web presence and improve the site's integration with social media outlets. For the redesign, I retained the site's original color palette but was inspired by the retro sci-fi theme of many of the group's audio productions.
                         </p>
                         <ul class="thumbnail-gallery">
                             <li>
