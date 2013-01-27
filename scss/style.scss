@@ -364,19 +364,12 @@ section {
     }
     .css3 {
         span {
-            width: 100%;
-        }
-        &:after {
-            border-left: 16px solid #000;
-            @include transition(border 0.2s ease); 
-        }
-        &:hover:after {
-            border-left: 16px solid darken($orange, 45%);
+            width: 95%;
         }
     }
     .html5 {
         span {
-            width: 95%;
+            width: 90%;
         }
     }
     .javascript{
@@ -396,7 +389,7 @@ section {
     }
     .photoshop{
         span {
-            width: 90%;
+            width: 85%;
         }
     }
     .illustrator{

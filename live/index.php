@@ -327,8 +327,8 @@ if (isset($_SESSION['return_data'])) {
     </section><!-- end contact -->
     
     <footer class="page-footer">
-        <p>&copy; 2012-2013 Christopher Wojcik.</p>
-        <p>Created on <a href="http://windows.microsoft.com">Windows</a> (because I'm not trendy enough for a <a href="http://www.apple.com/mac/">Mac</a>) and built with <a href="http://www.w3.org/html/logo/">HTML5</a>, <a href="http://dev.w3.org/csswg/css3-syntax/">CSS3</a>, and <a href="http://jquery.com/">JQuery</a>.</p>
+        <p>&copy; <?php echo date('Y'); ?> Christopher Wojcik.</p>
+        <p>Created on <a href="http://windows.microsoft.com">Windows</a> (because I can't afford a <a href="http://www.apple.com/mac/">Mac</a>) and built with <a href="http://www.w3.org/html/logo/">HTML5</a>, <a href="http://dev.w3.org/csswg/css3-syntax/">CSS3</a>, and <a href="http://jquery.com/">JQuery</a>.</p>
         <p>Hosted by <a href="http://asmallorange.com/">A Small Orange.</a></p>
         <nav class="main-nav" id="sticky-nav">
             <ul>
@@ -346,13 +346,6 @@ if (isset($_SESSION['return_data'])) {
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
     <!--<![endif]-->
-    
-    <script>
-        var _gaq=[['_setAccount','UA-27635613-2'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
 </body>
 
 </html>

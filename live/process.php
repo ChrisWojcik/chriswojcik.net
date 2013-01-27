@@ -1,7 +1,7 @@
 <?php
-require_once('../../includes/config.php');
-require_once('../../includes/PHPMailer/class.phpmailer.php');
-require_once('../../includes/formvalidator.php');
+require_once('../includes/config.php');
+require_once('../includes/PHPMailer/class.phpmailer.php');
+require_once('../includes/formvalidator.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {    
       
