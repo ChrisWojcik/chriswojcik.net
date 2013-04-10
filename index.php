@@ -120,7 +120,9 @@ if (isset($_SESSION['return_data'])) {
             <div id="featured-project">
                 <div class="project current" id="project-bartlet">
                     <figure>
-                        <img alt="Bartlet-Featured" src="img/bartlet-featured.jpg" width="516" height="538">
+                        <a href="portfolio/bartlet-for-america/">
+                            <img alt="Bartlet-Featured" src="img/bartlet-featured.jpg" width="516" height="538">
+                        </a>
                     </figure>
                     <article>
                         <h3>Bartlet For America, Class Project</h3>
@@ -152,7 +154,9 @@ if (isset($_SESSION['return_data'])) {
                 </div><!-- end project-bartlet -->
                 <div class="project" id="project-ranger">
                     <figure>
-                        <img alt="Ranger-Featured" src="img/ranger-featured.jpg" width="516" height="538">
+                        <a href="http://1strangers.us/">
+                            <img alt="Ranger-Featured" src="img/ranger-featured.jpg" width="516" height="538">
+                        </a>
                     </figure>
                     <article>
                         <h3>[1st RB], Online Gaming Group</h3>
@@ -179,7 +183,9 @@ if (isset($_SESSION['return_data'])) {
                 </div><!-- end project-ranger -->
                 <div class="project" id="project-rrca">
                     <figure>
-                        <img alt="RRCA-Featured" src="img/rrca-featured.jpg" width="516" height="538">
+                        <a href="img/rrca.jpg">
+                            <img alt="RRCA-Featured" src="img/rrca-featured.jpg" width="516" height="538">
+                        </a>
                     </figure>
                     <article>
                         <h3>Radio Repertory Company of America</h3>

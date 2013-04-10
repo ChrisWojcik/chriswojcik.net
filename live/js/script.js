@@ -159,15 +159,16 @@ WOJ.portfolioGallery = (function() {
 
         // Fade in other images when clicking on thumbnails
         projectsGallery.on('click', 'a', function(e) {
-            var link       = $(this),
-                newSrc     = link.attr('href'),
-                figure     = link.closest('.project').find('figure'),
-                currentImg = figure.find('img');
+            var link        = $(this),
+                newSrc      = link.attr('href'),
+                figure      = link.closest('.project').find('figure'),
+                currentLink = figure.find('a'),
+                currentImg  = figure.find('img');
 
             // Only run if we're clicking on a thumbnail of a different img
             if ((currentImg.attr('src') !==  newSrc) && !animating) {
                 animating = true;
-                switchFeaturedImg(currentImg, newSrc, figure, function() {
+                switchFeaturedImg(currentImg, newSrc, currentLink, function() {
                     animating = false;
                 });
             }
