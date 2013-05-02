@@ -1,7 +1,7 @@
 <?php
-require_once('../../includes/config.php');
-require_once('../../includes/PHPMailer/class.phpmailer.php');
-require_once('../../includes/formvalidator.php');
+require_once('../includes/config.php');
+require_once('../includes/PHPMailer/class.phpmailer.php');
+require_once('../includes/formvalidator.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {    
       
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         catch (phpmailerException $e) {
             header("HTTP/1.1 500 Internal Server Error");
-            echo "There was a problem submitting the email. Please try again later.";
+            echo "We're sorry, your email could not be sent. Please try again later.";
             exit();
         }
     }
@@ -51,7 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     //if this is not an ajax request  
-    if(empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest'){  
+    if(empty($_SERVER['HTTP_X_REQUESTED_WITH']) && 
+            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest'){  
         session_start();  
         $return_data = array(
             'formOK'  => $formOK,
