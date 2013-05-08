@@ -325,7 +325,7 @@ if (isset($_SESSION['return_data'])) {
                         <span id="loading"></span>                
                     </li>
                 </ol>
-                <div id="submit-message" class="<?php echo (isset($formOK) ? '' : 'hidden'); ?>">
+                <div id="submit-message" style="<?php echo (isset($formOK) ? '' : 'display:none'); ?>">
                     <span class="<?php echo (isset($formOK) ? $responsetype : 'hidden'); ?>"><?php if(isset($formOK)) { echo $submitmessage; } ?></span>
                 </div>
             </form>

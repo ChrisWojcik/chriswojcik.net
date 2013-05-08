@@ -297,6 +297,9 @@
                         success: function() {
                             self.showMessage("success", self.successMsg);
                             self.$loading.hide();
+                            setTimeout(function() {
+                                self.$submitMessage.fadeOut(500);
+                            }, 10000);
                         },
                         error: function() {
                             self.showMessage("failure", self.errorMsg);
@@ -317,7 +320,7 @@
         showMessage: function(type, message) {
             this.$messageContainer.text(message);
             this.$messageContainer.attr('class', type);
-            this.$submitMessage.removeClass('hidden');
+            this.$submitMessage.show();
         }
     };
     
