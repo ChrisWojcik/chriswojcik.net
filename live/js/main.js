@@ -321,13 +321,6 @@
         }
     };
     
-    // Expose to the global object
-    window.WOJ = WOJ;
+    WOJ.init();
     
 })(window, document, jQuery, Modernizr);
-
-jQuery(function () {
-    "use strict";
-    
-    WOJ.init();
-});
