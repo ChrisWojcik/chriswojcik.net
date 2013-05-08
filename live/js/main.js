@@ -16,11 +16,11 @@
         
         // Fixed nav bar will only be displayed at desktop screen sizes
         if (Modernizr.mq('only all and (min-device-width: 1024px)')) {
-            this.SHOW_STICKYNAV = true;
-            this.SCROLL_OFFSET = $('#sticky-nav').outerHeight() - 2;
+            this.showStickyNav = true;
+            this.scrollOffset = $('#sticky-nav').outerHeight() - 2;
         } else {
-            this.SHOW_STICKYNAV = false;
-            this.SCROLL_OFFSET = 0;
+            this.showStickyNav = false;
+            this.scrollOffset = 0;
         }
         
         // Add CSS hook for no media query support
@@ -70,7 +70,7 @@
             $.scrollTo(
                 $el,
                 {duration: duration,
-                  offset: {'left': 0, 'top': WOJ.SCROLL_OFFSET * -1},
+                  offset: {'left': 0, 'top': WOJ.scrollOffset * -1},
                   onAfter: (typeof callback === 'function') ? 
                     callback : null
                 }
@@ -86,7 +86,7 @@
             this.bindEvents();
             this.$stickyNav.hide(); // Hide by default
             
-            if (WOJ.SHOW_STICKYNAV) {
+            if (WOJ.showStickyNav) {
                 this.$mainNav.find('li:first-child a').addClass('current');
                 this.setWaypoints();                
             }
@@ -119,14 +119,14 @@
             // Reveal the sticky nav if twice its height down the page
             $('#home').waypoint({
                 handler: $.proxy(self.fadeInOutStickyNav, self),
-                offset: WOJ.SCROLL_OFFSET * -2
+                offset: WOJ.scrollOffset * -2
             });
 
             // Set a waypoint at each section to cycle the current selection on 
             // the nav bar
             $('section').waypoint({
                 handler: $.proxy(self.changeSelectedLink, self),
-                offset: WOJ.SCROLL_OFFSET * 2
+                offset: WOJ.scrollOffset * 2
             });
         },
         
