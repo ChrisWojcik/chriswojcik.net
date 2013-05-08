@@ -298,8 +298,8 @@
                             self.showMessage("success", self.successMsg);
                             self.$loading.hide();
                             setTimeout(function() {
-                                self.$submitMessage.fadeOut(500);
-                            }, 10000);
+                                self.$submitMessage.fadeOut(700);
+                            }, 8000);
                         },
                         error: function() {
                             self.showMessage("failure", self.errorMsg);
